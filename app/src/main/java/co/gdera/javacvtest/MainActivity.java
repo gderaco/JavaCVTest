@@ -7,9 +7,8 @@ import android.view.MenuItem;
 
 import org.bytedeco.javacpp.opencv_core;
 import org.bytedeco.javacv.FFmpegFrameRecorder;
-import org.bytedeco.javacv.Frame;
 
-import static org.bytedeco.javacpp.opencv_highgui.*;
+import static org.bytedeco.javacpp.opencv_highgui.cvLoadImage;
 
 
 
@@ -24,8 +23,6 @@ public class MainActivity extends ActionBarActivity {
         opencv_core.IplImage img = cvLoadImage("/sdcard/image.jpg");
 
         FFmpegFrameRecorder recorder = new FFmpegFrameRecorder("/sdcard/test.mpeg",200,150);
-
-        Frame frame = new Frame();
 
         try {
             recorder.setFrameRate(30);
